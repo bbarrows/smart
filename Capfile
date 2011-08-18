@@ -2,7 +2,7 @@ load 'deploy' if respond_to?(:namespace) # cap2 differentiator
 
 set :application, "smart"
 set :user, "bbarrows"
-set :password, "102587Beb"
+#set :password, "asdf"
 
 set :scm, :git
 set :repository,  "git@github.com:bbarrows/smart.git"

@@ -1,1 +1,3 @@
 Brad Barrows' SmartBarApp
+To deploy run cap deploy:update
+
