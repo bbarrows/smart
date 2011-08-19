@@ -24,7 +24,7 @@
   	  <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
   			<li data-role="list-divider">SmartBar</li> 
   			<li><a href="#about">About Us</a></li> 
-  			<li><a href="#selectLocation">Make an Order</a></li> 
+  			<li><a href="#order">Make an Order</a></li> 
   		</ul>
 
   	</div><!-- /content -->
@@ -33,17 +33,6 @@
   		<h4><%=@footer %></h4>
   	</div><!-- /header -->
   </div><!-- /page -->
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -71,107 +60,43 @@
   
   
   
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  	
-  <div data-role="page" id="selectLocation">
+<div data-role="page" id="order" class="items">
 
-  	<div data-role="header">
-  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
-  		<h1>Select a Location</h1>
-  	</div><!-- /header -->
+	<div data-role="header">
+	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+		<h1>Make an Order</h1>
+	</div><!-- /header -->
 
-  	<div data-role="content">	
-  		<h3>Which beach will you be visiting?</h3>		
+	<div data-role="content">	
+		<h3>Which items would you like to order?</h3>		
+  <% Item.all.each do |item| %>
+    
+			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+				<h3><%=item.name %> - $<%=item.price %></h3> 
+				<div class="ui-body ui-body-e"> 
+  			<img src="<%=item.img %>" />
+        <p><%=item.desc %></p> 
 
-
-        <!-- document - choice made to put all locations in db instead of hardocded so can be easily changed and 
-        te restrucitons too. 
-        Some of the restricitons iwll be hard coed because of their variety. 
-        -->
-
-        <% @locations.each do |location| %>
-        <div id="gotoLocation" data-locationId="<%= location.id %>"><a href="#items<%=location.name.delete(' ') %>" data-id="<%= location.id %>" data-theme="b" data-icon="check" data-role="button"><%= location.name %></a></div>
-        <% end %>
-
-  	</div><!-- /content -->
-
-  	<div data-role="footer">
-  		<h4><%=@footer %></h4>
-  	</div><!-- /header -->
-  </div><!-- /page -->
-  
-  
-  
-  
-  
-  
-<% @locations.each do |location| %>  
-  <div data-role="page" id="items<%=location.name.delete(' ') %>" class="items">
-
-  	<div data-role="header">
-  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
-  		<h1>Your purchase</h1>
-  	</div><!-- /header -->
-
-  	<div data-role="content">	
-  		<h3>Which items would you like to order to <%=location.name %>?</h3>		
-      <% LocationItem.where(:location_id => location.id).each do |locationToItem| %>
-        <% item = Item.where(:id => locationToItem.item_id).first %>
-        
-  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
-  				<h3><%=item.name %> - $<%=item.price %></h3> 
-  				<div class="ui-body ui-body-e"> 
-      			<img src="<%=item.img %>" />
-            <p><%=item.desc %></p> 
-
-      			<a href="#" class="add_to_cart" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>" data-icon="plus" data-role="button">Add to Cart</a>
-      		</div><!-- /themed container -->
-  			</div><!-- /collapsible -->
-    		        
-        
-    		<!--div class="ui-body ui-body-e"> 
-    			<h1><%=item.name %></h1> 
-    			<img src="<%=item.img %>" />
-    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
-    				<h3>Description</h3> 
-    				<p><%=item.desc %></p> 
-    			</div>
-    			
-    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="<%=item.id%>" data-icon="plus" data-role="button">Add to Cart</a>
-    		</div-->
-        		
-      <% end %>
-      
-      <div class="ui-body ui-body-e"> 
-        <h1>Shopping Cart</h1>
-        <div class="cartItems"><h3>Total: $0</h3></div>
+  			<a href="#" class="add_to_cart" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>" data-icon="plus" data-role="button">Add to Cart</a>
   		</div><!-- /themed container -->
-      
-      <div class="checkoutButton">
-      <a href="#checkout" data-theme="b" data-icon="arrow-r" data-role="button">Proceed to Checkout</a>
-      </div>
-  	</div><!-- /content -->
+			</div><!-- /collapsible -->
+  <% end %>
+  
+  <div class="ui-body ui-body-e"> 
+    <h1>Shopping Cart</h1>
+    <div class="cartItems"><h3>Total: $0</h3></div>
+		</div><!-- /themed container -->
+  
+  <div class="checkoutButton">
+  <a href="#checkout" data-theme="b" data-icon="arrow-r" data-role="button">Proceed to Checkout</a>
+  </div>
+	</div><!-- /content -->
 
-  	<div data-role="footer">
-  		<h4><%=@footer %></h4>
-  	</div><!-- /header -->
-  </div><!-- /page -->
-<% end %>  
-  
-  
-  
-  
-  
-  
-  
+	<div data-role="footer">
+		<h4><%=@footer %></h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+
   
   <!-- Start of second page -->
   <div data-role="page" id="checkout">
@@ -317,10 +242,6 @@
       updateCart();
     });
 
-    $('#gotoLocation').live('click', function() {
-      $("#location").val($(this).attr('data-locationID'));
-    });
-    
     $('#doCheck').click(function () {
       $('#ccnum').val( $('#ccnum').val().split(' ').join('').split('-').join('')  );
       $('#phone').val( $('#phone').val().split(' ').join('').split('-').join('')  );

@@ -12,9 +12,6 @@ require File.expand_path('../appConfig.rb', __FILE__)
 
 require File.expand_path('../models/item', __FILE__)
 require File.expand_path('../models/order', __FILE__)
-require File.expand_path('../models/purchase', __FILE__)
-require File.expand_path('../models/location', __FILE__)
-require File.expand_path('../models/location_item', __FILE__)
 
 @test = 0
 
@@ -101,7 +98,6 @@ get '/orders' do
 end
 
 get '/' do
-  @locations = Location.all
   @footer = "Beach Luxury"
   @failure = FAILURE_MESSAGE
   cache(erb(:index))
@@ -112,7 +108,6 @@ post '/purchase' do
   last_four = ccnum[-4,4]
   exp = params[:month] + params[:year] #'1120'
   #total = params[:total] Calculate this myself to prevent someone from posting their own value
-  location = params[:location]
   phone = params[:phone]
   email = params[:email]
   @name = params[:name]
@@ -142,7 +137,6 @@ post '/purchase' do
     
     @order = Order.new do |o|
       o.total = total
-      o.location_id = location
       o.order_json = order_json
       o.note = ""
       o.status = INCOMPLETE
@@ -154,8 +148,6 @@ post '/purchase' do
       #o.user_id_fullfilled
     end
     
-    @location_name = Location.find(location).name
-    
     @order.save
     
     time_zone = TZInfo::Timezone.get('America/Los_Angeles')
@@ -166,7 +158,7 @@ post '/purchase' do
               :subject => EMAIL_SUBJECT,
               :body => erb(:confirmation_email)
               
-    #use @order, @order_text, @location_name
+    #use @order, @order_text
     Pony.mail :to => FROM_EMAIL,
               :from => FROM_EMAIL,
               :subject => ORDER_SUBJECT + @order.id.to_s,

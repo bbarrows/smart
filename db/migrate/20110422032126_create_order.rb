@@ -2,7 +2,6 @@ class CreateOrder < ActiveRecord::Migration
   def self.up
     create_table :orders do |t|
       t.integer :total
-      t.integer :location_id
       t.string  :order_json
       t.string  :note
       t.string  :status
