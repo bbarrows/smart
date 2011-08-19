@@ -9,7 +9,6 @@ require 'sinatra/activerecord/rake'
 
 require File.expand_path('../lib/models/item', __FILE__)
 require File.expand_path('../lib/models/order', __FILE__)
-require File.expand_path('../lib/models/purchase', __FILE__)
 
 database_urls = {
     :development => 'mysql://root:password@127.0.0.1:3306/beer',
