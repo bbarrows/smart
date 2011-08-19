@@ -12,8 +12,20 @@ GEM
       tzinfo (~> 0.3.23)
     activesupport (3.0.7)
     arel (2.0.9)
+    authorize-net (1.5.2)
+      nokogiri (~> 1.4)
     builder (2.1.2)
     i18n (0.5.0)
+    json (1.4.6)
+    mail (2.3.0)
+      i18n (>= 0.4.0)
+      mime-types (~> 1.16)
+      treetop (~> 1.4.8)
+    mime-types (1.16)
+    nokogiri (1.4.4)
+    polyglot (0.3.1)
+    pony (1.2)
+      mail (> 2.0)
     rack (1.2.2)
     ruby-mysql (2.9.4)
     sinatra (1.2.3)
@@ -22,6 +34,8 @@ GEM
     sinatra-activerecord (0.1.3)
       sinatra (>= 0.9.4)
     tilt (1.2.2)
+    treetop (1.4.9)
+      polyglot (>= 0.3.1)
     tzinfo (0.3.23)
 
 PLATFORMS
@@ -29,6 +43,9 @@ PLATFORMS
 
 DEPENDENCIES
   activerecord
+  authorize-net
+  json
+  pony
   ruby-mysql
   sinatra
   sinatra-activerecord

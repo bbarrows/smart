@@ -1,0 +1,2 @@
+touch tmp/restart.txt
+rm public/index.html

@@ -1,0 +1,111 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Beach Butlerz</title> 
+	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.0a4.1.css" />
+	<link rel="stylesheet" href="myStyle.css" />
+	<script src="json2.js"></script>
+	<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+
+	<script type="text/javascript">
+	/*
+	$(document).bind('mobileinit',function(){
+		$.mobile.selectmenu.prototype.options.nativeMenu = false;
+	});*/
+	</script>
+
+	<script type="text/javascript" src="jquerymobile/jquery.mobile-1.0a4.1.min.js"></script>
+</head> 
+<body>
+   
+
+  <!-- Start of first page -->
+  <div data-role="page" id="home">
+
+  	<div data-role="header" data-backbtn=”false” data-nobackbtn=”false”>
+  		<h1>Orders</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  	
+  	  <div class="ui-grid-a">
+      	<div class="ui-block-a">
+      	 	<div data-role="controlgroup" data-type="horizontal">
+            <a href="<%=BASE_URL%>/orders?status=<%=COMPLETE%>" data-role="button">Show Complete Orders</a>
+            <a href="<%=BASE_URL%>/orders?status=<%=INCOMPLETE%>" data-role="button">Show Incomplete Orders</a>
+          </div>
+      	</div>
+      	<div class="ui-block-b">
+      	 	<!--div data-role="controlgroup" data-type="horizontal">
+            <a href="/orders?order=<%=ASC%>" data-role="button">Ascending</a>
+            <a href="/orders?order=<%=DESC%>" data-role="button">Descending</a>
+          </div-->
+      	</div>
+    	</div>
+
+      
+      <div class="ui-body ui-body-e">
+        <% @orders.each do |o| %>
+        <% orderItems = JSON.parse(o.order_json) %>
+        <div class="ui-grid-a">
+        	<div class="ui-block-a"><strong>Name:</strong></div><div class="ui-block-b"><%=o.name%></div>
+        	<div class="ui-block-a"><strong>Order:</strong></div><div class="ui-block-b">
+        	  <% 
+        	  orderItems.each do |i|
+        	    %>
+        	    <p><%=i[1]%> * <%=@items[i[0]].name %></p>
+        	    <%
+        	  end
+        	  %>
+        	</div>
+        	<div class="ui-block-a"><strong>Order Notes:</strong></div>
+        	<!--div class="ui-block-b">
+        	  <textarea id="orderNote<%=o.id%>"><%=o.note%></textarea>
+        	  <a class="saveOrderNotes" href="#" data-orderid="<%=o.id%>" data-role="button" data-theme="b">Update Notes</a>
+        	</div-->
+        	<div class="ui-block-a"><strong>Last four CC#s:</strong></div><div class="ui-block-b"><%=o.last_four%></div>
+        	<div class="ui-block-a"><strong>Code:</strong></div><div class="ui-block-b"><%=o.code%></div>
+        	<div class="ui-block-a"><strong>Email:</strong></div><div class="ui-block-b"><%=o.email%></div>
+        	<div class="ui-block-a"><strong>Phone:</strong></div><div class="ui-block-b"><%=o.phone%></div>
+        	<div class="ui-block-a"><strong>Order Status:</strong></div>
+        	  <div class="ui-block-b">
+        	    <select name="select-choice-1" id="select-choice-1" data-orderId="<%= o.id %>" class="statusSelect">
+            		<option <%= "selected='1'" if o.status==INCOMPLETE %> value="<%=INCOMPLETE%>"><%=INCOMPLETE%></option>
+            		<option <%= "selected='1'" if o.status==COMPLETE %> value="<%=COMPLETE%>"><%=COMPLETE%></option>
+            	</select>
+        	  </div>
+        	<!--div class="ui-block-a"><strong>Delete Order:</strong></div>
+        	<div class="ui-block-b"><a class="deleteOrder" href="/orders?order=<%=ASC%>" data-orderId="<%= o.id %>" data-role="button">Delete</a></div-->
+        </div><!-- /grid-a -->
+                
+        <div data-role="fieldcontain">
+          <hr />
+        </div>
+
+        <% end %>
+      </div>
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  <script type="text/javascript">
+  $(".statusSelect").live('click', function () {
+    alert("S");
+  });
+  
+    $(".statusSelect").live('change', function () {
+      
+      $.post("/updateOrderStatus", {status: $(this).val(), orderId: $(this).attr('data-orderId')}, 
+      function (data) 
+      {
+        //window.location.reload();
+      });
+      
+    });
+  </script>
+</body>
+</html>

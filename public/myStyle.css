@@ -19,3 +19,18 @@
 .items h1 {
   text-align: center;
 }
+
+#month {
+  display: inline-block;
+  width: 20%;
+}
+
+#year {
+  display: inline-block;
+  width: 20%;
+}
+
+#expFiller {
+  display: inline-block;
+  width: 20%;
+}

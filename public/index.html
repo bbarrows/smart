@@ -1,1 +1,1033 @@
-IT WORKING THIS IS FROM CAP
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Beach Butlerz</title> 
+	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.0a4.1.css" />
+	<link rel="stylesheet" href="myStyle.css" />
+	<script src="json2.js"></script>
+	<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="jquerymobile/jquery.mobile-1.0a4.1.min.js"></script>
+</head> 
+<body>
+   
+
+  <!-- Start of first page -->
+  <div data-role="page" id="home">
+
+  	<div data-role="header">
+  		<h1>Beach Butlerz - Home</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  	  <div class="logo center-wrapper"></div>
+  	  
+  	  <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+  			<li data-role="list-divider">Beach Butlerz</li> 
+  			<li><a href="#about">About Us</a></li> 
+  			<li><a href="#selectLocation">Make an Order</a></li> 
+  		</ul>
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Start of second page -->
+  <div data-role="page" id="about">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>About Us</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<p>We are Beach Butlerz!.</p>		
+  		<p><a href="#home">Back to Home</a></p>	
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  	
+  <div data-role="page" id="selectLocation">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>Select a Location</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<h3>Which beach will you be visiting?</h3>		
+
+
+        <!-- document - choice made to put all locations in db instead of hardocded so can be easily changed and 
+        te restrucitons too. 
+        Some of the restricitons iwll be hard coed because of their variety. 
+        -->
+
+        
+        <div id="gotoLocation" data-locationId="1"><a href="#itemsAvilaBeach" data-id="1" data-theme="b" data-icon="check" data-role="button">Avila Beach</a></div>
+        
+        <div id="gotoLocation" data-locationId="2"><a href="#itemsOldePortBeach" data-id="2" data-theme="b" data-icon="check" data-role="button">Olde Port Beach</a></div>
+        
+        <div id="gotoLocation" data-locationId="3"><a href="#itemsPismoBeach" data-id="3" data-theme="b" data-icon="check" data-role="button">Pismo Beach</a></div>
+        
+        <div id="gotoLocation" data-locationId="4"><a href="#itemsOceanoBeach" data-id="4" data-theme="b" data-icon="check" data-role="button">Oceano Beach</a></div>
+        
+        <div id="gotoLocation" data-locationId="5"><a href="#itemsCayucosBeach" data-id="5" data-theme="b" data-icon="check" data-role="button">Cayucos Beach</a></div>
+        
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  
+  
+  
+  
+  
+  
+  <div data-role="page" id="itemsAvilaBeach" class="items">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>Your purchase</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<h3>Which items would you like to order to Avila Beach?</h3>		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Awesome Day - $40</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="awesome.png" />
+            <p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="1" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Awesome Day</h1> 
+    			<img src="awesome.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>California Classic - $27</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="cali.png" />
+            <p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="2" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>California Classic</h1> 
+    			<img src="cali.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Sand Toys - $3</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="sand.png" />
+            <p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="5" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Sand Toys</h1> 
+    			<img src="sand.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+      
+      <div class="ui-body ui-body-e"> 
+        <h1>Shopping Cart</h1>
+        <div class="cartItems"><h3>Total: $0</h3></div>
+  		</div><!-- /themed container -->
+      
+      <div class="checkoutButton">
+      <a href="#checkout" data-theme="b" data-icon="arrow-r" data-role="button">Proceed to Checkout</a>
+      </div>
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  <div data-role="page" id="itemsOldePortBeach" class="items">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>Your purchase</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<h3>Which items would you like to order to Olde Port Beach?</h3>		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Awesome Day - $40</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="awesome.png" />
+            <p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="1" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Awesome Day</h1> 
+    			<img src="awesome.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>California Classic - $27</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="cali.png" />
+            <p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="2" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>California Classic</h1> 
+    			<img src="cali.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Bonfire - $45</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="bonfire.png" />
+            <p>A bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party.  The 'Bonfire at the Beach!' service includes a completely built bonfire, pre-lit for you minutes before you arrive or left with all the needed tools for you to take on the challenge of lighting the fire.  You get a total of 15 fire logs already primed for burning.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="3" data-theme="b" data-itemid="3" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Bonfire</h1> 
+    			<img src="bonfire.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>A bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party.  The 'Bonfire at the Beach!' service includes a completely built bonfire, pre-lit for you minutes before you arrive or left with all the needed tools for you to take on the challenge of lighting the fire.  You get a total of 15 fire logs already primed for burning.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="3" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Sunset Bonfire - $115</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="sunset.png" />
+            <p>After the sun goes down, a bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party. Beach Butlerz is offering you this most unique beach bonfire experience.  Beach Butlerz will set up a couple of luxury beach loungers, each draped with an incredibly warm blanket, and build a gorgeous bonfire. Beach Butlerz carries the firewood, beach furniture, and warm blankets all out to the beach for you! All you need to do is show up.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="4" data-theme="b" data-itemid="4" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Sunset Bonfire</h1> 
+    			<img src="sunset.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>After the sun goes down, a bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party. Beach Butlerz is offering you this most unique beach bonfire experience.  Beach Butlerz will set up a couple of luxury beach loungers, each draped with an incredibly warm blanket, and build a gorgeous bonfire. Beach Butlerz carries the firewood, beach furniture, and warm blankets all out to the beach for you! All you need to do is show up.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="4" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Sand Toys - $3</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="sand.png" />
+            <p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="5" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Sand Toys</h1> 
+    			<img src="sand.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+      
+      <div class="ui-body ui-body-e"> 
+        <h1>Shopping Cart</h1>
+        <div class="cartItems"><h3>Total: $0</h3></div>
+  		</div><!-- /themed container -->
+      
+      <div class="checkoutButton">
+      <a href="#checkout" data-theme="b" data-icon="arrow-r" data-role="button">Proceed to Checkout</a>
+      </div>
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  <div data-role="page" id="itemsPismoBeach" class="items">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>Your purchase</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<h3>Which items would you like to order to Pismo Beach?</h3>		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Awesome Day - $40</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="awesome.png" />
+            <p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="1" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Awesome Day</h1> 
+    			<img src="awesome.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>California Classic - $27</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="cali.png" />
+            <p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="2" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>California Classic</h1> 
+    			<img src="cali.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Sand Toys - $3</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="sand.png" />
+            <p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="5" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Sand Toys</h1> 
+    			<img src="sand.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+      
+      <div class="ui-body ui-body-e"> 
+        <h1>Shopping Cart</h1>
+        <div class="cartItems"><h3>Total: $0</h3></div>
+  		</div><!-- /themed container -->
+      
+      <div class="checkoutButton">
+      <a href="#checkout" data-theme="b" data-icon="arrow-r" data-role="button">Proceed to Checkout</a>
+      </div>
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  <div data-role="page" id="itemsOceanoBeach" class="items">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>Your purchase</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<h3>Which items would you like to order to Oceano Beach?</h3>		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Awesome Day - $40</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="awesome.png" />
+            <p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="1" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Awesome Day</h1> 
+    			<img src="awesome.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>California Classic - $27</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="cali.png" />
+            <p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="2" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>California Classic</h1> 
+    			<img src="cali.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Bonfire - $45</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="bonfire.png" />
+            <p>A bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party.  The 'Bonfire at the Beach!' service includes a completely built bonfire, pre-lit for you minutes before you arrive or left with all the needed tools for you to take on the challenge of lighting the fire.  You get a total of 15 fire logs already primed for burning.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="3" data-theme="b" data-itemid="3" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Bonfire</h1> 
+    			<img src="bonfire.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>A bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party.  The 'Bonfire at the Beach!' service includes a completely built bonfire, pre-lit for you minutes before you arrive or left with all the needed tools for you to take on the challenge of lighting the fire.  You get a total of 15 fire logs already primed for burning.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="3" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Sunset Bonfire - $115</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="sunset.png" />
+            <p>After the sun goes down, a bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party. Beach Butlerz is offering you this most unique beach bonfire experience.  Beach Butlerz will set up a couple of luxury beach loungers, each draped with an incredibly warm blanket, and build a gorgeous bonfire. Beach Butlerz carries the firewood, beach furniture, and warm blankets all out to the beach for you! All you need to do is show up.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="4" data-theme="b" data-itemid="4" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Sunset Bonfire</h1> 
+    			<img src="sunset.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>After the sun goes down, a bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party. Beach Butlerz is offering you this most unique beach bonfire experience.  Beach Butlerz will set up a couple of luxury beach loungers, each draped with an incredibly warm blanket, and build a gorgeous bonfire. Beach Butlerz carries the firewood, beach furniture, and warm blankets all out to the beach for you! All you need to do is show up.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="4" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Sand Toys - $3</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="sand.png" />
+            <p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="5" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Sand Toys</h1> 
+    			<img src="sand.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+      
+      <div class="ui-body ui-body-e"> 
+        <h1>Shopping Cart</h1>
+        <div class="cartItems"><h3>Total: $0</h3></div>
+  		</div><!-- /themed container -->
+      
+      <div class="checkoutButton">
+      <a href="#checkout" data-theme="b" data-icon="arrow-r" data-role="button">Proceed to Checkout</a>
+      </div>
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  <div data-role="page" id="itemsCayucosBeach" class="items">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>Your purchase</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<h3>Which items would you like to order to Cayucos Beach?</h3>		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Awesome Day - $40</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="awesome.png" />
+            <p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="1" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Awesome Day</h1> 
+    			<img src="awesome.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get TWO of our luxury beach loungers and one large 7.5-foot beach wood post umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="1" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>California Classic - $27</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="cali.png" />
+            <p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="2" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>California Classic</h1> 
+    			<img src="cali.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>You get one of our luxury beach loungers and one large 7.5-foot wood post beach umbrella.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="2" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Bonfire - $45</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="bonfire.png" />
+            <p>A bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party.  The 'Bonfire at the Beach!' service includes a completely built bonfire, pre-lit for you minutes before you arrive or left with all the needed tools for you to take on the challenge of lighting the fire.  You get a total of 15 fire logs already primed for burning.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="3" data-theme="b" data-itemid="3" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Bonfire</h1> 
+    			<img src="bonfire.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>A bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party.  The 'Bonfire at the Beach!' service includes a completely built bonfire, pre-lit for you minutes before you arrive or left with all the needed tools for you to take on the challenge of lighting the fire.  You get a total of 15 fire logs already primed for burning.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="3" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Sunset Bonfire - $115</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="sunset.png" />
+            <p>After the sun goes down, a bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party. Beach Butlerz is offering you this most unique beach bonfire experience.  Beach Butlerz will set up a couple of luxury beach loungers, each draped with an incredibly warm blanket, and build a gorgeous bonfire. Beach Butlerz carries the firewood, beach furniture, and warm blankets all out to the beach for you! All you need to do is show up.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="4" data-theme="b" data-itemid="4" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Sunset Bonfire</h1> 
+    			<img src="sunset.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>After the sun goes down, a bonfire on the beach makes for a romantic evening or an awesome time for a family and friends party. Beach Butlerz is offering you this most unique beach bonfire experience.  Beach Butlerz will set up a couple of luxury beach loungers, each draped with an incredibly warm blanket, and build a gorgeous bonfire. Beach Butlerz carries the firewood, beach furniture, and warm blankets all out to the beach for you! All you need to do is show up.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="4" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+        
+        
+  			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+  				<h3>Sand Toys - $3</h3> 
+  				<div class="ui-body ui-body-e"> 
+      			<img src="sand.png" />
+            <p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+
+      			<a href="#" class="add_to_cart" data-itemID="5" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+      		</div><!-- /themed container -->
+  			</div><!-- /collapsible -->
+    		        
+        
+    		<!--div class="ui-body ui-body-e"> 
+    			<h1>Sand Toys</h1> 
+    			<img src="sand.png" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    				<h3>Description</h3> 
+    				<p>This sand toy set comes complete with shovels, buckets, and sand shapers. It's perfect for building your own private sand castle.</p> 
+    			</div>
+    			
+    			<a href="#" class="add_to_cart" data-theme="b" data-itemid="5" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div-->
+        		
+      
+      
+      <div class="ui-body ui-body-e"> 
+        <h1>Shopping Cart</h1>
+        <div class="cartItems"><h3>Total: $0</h3></div>
+  		</div><!-- /themed container -->
+      
+      <div class="checkoutButton">
+      <a href="#checkout" data-theme="b" data-icon="arrow-r" data-role="button">Proceed to Checkout</a>
+      </div>
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Start of second page -->
+  <div data-role="page" id="checkout">
+
+  	<div data-role="header">
+  		<h1>Checkout</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  	  
+  	  <div id="notice"></div>
+
+      <div data-role="fieldcontain">
+        <form id="orderForm">
+          <label for="name">Phone Number:</label>
+          <input type="text" name="phone" id="phone" value=""  />
+          
+          <label for="name">Credit Card Number:</label>
+          <input type="text" name="ccnum" id="ccnum" value=""  />
+          
+          <label for="name">Expiration MM/YY:</label>
+          <input type="text" name="month" id="month" value=""  />/<input type="text" name="year" id="year" value=""  /> <div id="expFiller"></div>
+          
+          <label for="name">Name:</label>
+          <input type="text" name="name" id="name" value=""  />
+          
+          <label for="name">Email:</label>
+          <input type="text" name="email" id="email" value=""  />
+          
+          <input type="hidden" id="location" name="location" />
+          <input type="hidden" name="order_json" id="order_json" />
+          <input type="hidden" id="total" name="total" />
+          
+        </form>
+      </div>
+      <div id="doCheck"><a href="" data-theme="b" data-icon="check" data-role="button">Checkout</a></div>
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  	
+  </div><!-- /page -->
+  
+  
+  
+  
+  
+  <!-- Start of second page -->
+  <div data-role="page" id="verification">
+
+  	<div data-role="header" data-backbtn="false">
+  		<h1>Verification</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  	  <p>
+  	    A confirmation email containing your purchase id has been sent to your address. Beach Butlerz will be
+  	    contacting you shortly.
+  	  </p>
+  	  <p>Note that your Purchase ID is: <span id="purchaseCode"></span></p>
+    </div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4>Beach Luxury</h4>
+  	</div><!-- /header -->
+  	
+  </div><!-- /page -->  
+  
+  
+  <script type="text/javascript">
+    $(".ui-btn").live('click', function () { $(this).removeClass('ui-btn-active'); })
+    $('.checkoutButton').hide();
+
+    var itemNames = {};
+    
+    itemNames[1]="Awesome Day";
+    
+    itemNames[2]="California Classic";
+    
+    itemNames[3]="Bonfire";
+    
+    itemNames[4]="Sunset Bonfire";
+    
+    itemNames[5]="Sand Toys";
+    
+    
+    var itemPrice = {};
+    
+    itemPrice[1]="40";
+    
+    itemPrice[2]="27";
+    
+    itemPrice[3]="45";
+    
+    itemPrice[4]="115";
+    
+    itemPrice[5]="3";
+    
+    
+    var toBuy = {};
+
+    function updateCart()
+    {
+      $('#order_json').val(JSON.stringify(toBuy));
+      $('#cart_items').html("");
+      var htmlStr = "";      
+      var total = 0;
+      
+      for(k in itemNames)
+      {
+        if(toBuy[k] && toBuy[k] > 0)
+        {                    
+          htmlStr += '<a href="#" class="minus_item ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow  ui-btn-down-b ui-btn-up-b" data-itemid="' + k + '" data-theme="b" data-icon="minus" data-role="button"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">'  + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k] + '</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>';
+          
+          total += parseInt(itemPrice[k]) * parseInt(toBuy[k]);
+        }
+      }
+      
+      htmlStr += "<h3>Total: $" + total + "</h3>";
+      $("#total").val(total);
+      
+      $('.cartItems', $.mobile.activePage).html(htmlStr);
+      
+      if (total <= 0)
+      {
+        $('.checkoutButton').hide();
+      }
+      else
+      {
+        $('.checkoutButton').show();
+      }
+      
+    }
+    
+    $('.add_to_cart').live('click', function () {
+      var curBeer = $(this).attr('data-itemID');
+      if (toBuy[curBeer])
+      { 
+        toBuy[curBeer]++; 
+      }
+      else
+      {
+        toBuy[curBeer]=1;
+      }
+      updateCart();
+    }); 
+
+    $('.minus_item').live('click', function () {
+      var curBeer = $(this).attr('data-itemID');
+      if (toBuy[curBeer] && toBuy[curBeer]>1)
+      { 
+        toBuy[curBeer]--; 
+      }
+      else
+      {
+        toBuy[curBeer]=0;
+      }
+      updateCart();
+    });
+
+    $('#gotoLocation').live('click', function() {
+      $("#location").val($(this).attr('data-locationID'));
+    });
+    
+    $('#doCheck').click(function () {
+      $('#ccnum').val( $('#ccnum').val().split(' ').join('').split('-').join('')  );
+      $('#phone').val( $('#phone').val().split(' ').join('').split('-').join('')  );
+      
+      var month = $('#month').val();
+      var year = $('#year').val();
+      var ccnum = $('#ccnum').val();
+      var phone = $('#phone').val();
+      var email = $('#email').val();
+      var name = $('#name').val();
+
+      var success = true;
+
+      var newHtml = "<ul>";
+
+      if(month.length != 2 || !(month >=0 && month <=12))
+      {
+        newHtml += "<li>Please enter a valid month.</li>";
+        success = false;
+      }
+
+      if(year.length != 2 || (year - 0 != year))
+      {
+        newHtml += "<li>Please enter a valid year.</li>";
+        success = false;
+      }
+
+      if(ccnum - 0 != ccnum && ccnum.length >= 10)
+      {
+        newHtml += "<li>Your credit card number should only contain digits.</li>";
+        success = false;
+      }
+      
+      if(!phone || phone=="")
+      {
+        newHtml += "<li>Please enter a phone number.</li>";
+        success = false;
+      }
+      
+      if(!email || email=="")
+      {
+        newHtml += "<li>Please enter an email.</li>";
+        success = false;
+      }
+      
+      if(!name || name=="")
+      {
+        newHtml += "<li>Please enter a name.</li>";
+        success = false;
+      }
+      
+      newHtml += "</ul>";
+      $("#notice").html(newHtml);
+
+      if(success)
+      {
+        tryPurchase();
+      }
+    });
+    
+    function tryPurchase()
+    {
+      $.post("/purchase", $("#orderForm").serialize(), 
+      function (data) 
+      {
+        if(data.indexOf("Failed") == -1)
+        {
+          $("#purchaseCode").html(data);
+          $.mobile.changePage($("#verification"));
+        }
+        else
+        {
+          $("#notice").html("<h3>" + data + "</h3>");
+        }
+      });
+    }
+
+  </script>
+
+</body>
+</html>
