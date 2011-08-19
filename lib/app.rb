@@ -103,6 +103,9 @@ get '/' do
   cache(erb(:index))
 end
 
+
+# :number => '4222222222222', #Authorize.net test card, error-producing       
+#:number => '4007000000027', #Authorize.net test card, non-error-producing
 post '/purchase' do
   ccnum = params[:ccnum] #'4111111111111111'
   last_four = ccnum[-4,4]

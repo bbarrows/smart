@@ -1,3 +1,12 @@
 Brad Barrows' SmartBarApp
 To deploy run cap deploy:update
 
+TODO:
+1. Logo
+2. How it works
+Select desired beer or wine
+Checkout with paypal, google checkout, or enter your credit card
+Bring confirmation code and ID to Smart Bar, look for our banner next to the beer tents
+Pickup beer or wine, and enjoy the show while feeling phenomenal!
+3. Use the same beer I sent you before for the stone temple pilot show.
+4. Name on credit card must match name on ID to be shown to Smart Bar vendor.
