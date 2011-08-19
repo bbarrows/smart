@@ -16,8 +16,10 @@ role :db, "bbarrows.com", :primary => true
 set :runner, user
 set :admin_runner, user
 
+after 'deploy:update', 'deploy:restart'
+
 namespace :deploy do
-  task :start, :roles => [:web, :app] do
-    run "cd #{deploy_to}/current/tmp && touch restart.txt"
+  task :restart, :roles => [:web, :app] do
+    run "cd #{deploy_to}/current/tmp && touch restart.txt && rm #{deploy_to}/current/public/index.html"
   end
 end
