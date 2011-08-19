@@ -18,6 +18,6 @@ set :admin_runner, user
 
 namespace :deploy do
   task :start, :roles => [:web, :app] do
-    run "cd #{deploy_to}/tmp && touch restart.txt"
+    run "cd #{deploy_to}/current/tmp && touch restart.txt"
   end
 end
