@@ -1,0 +1,21 @@
+.logo {
+  background-image: url(logoTran.png);
+  background-repeat: no-repeat;
+  overflow: hidden;
+  width: 106px;
+  height: 100px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.items img{
+  margin-left: auto;
+  margin-right: auto;
+  width: 97px;
+  height: 115px;
+  display: block;
+}
+
+.items h1 {
+  text-align: center;
+}

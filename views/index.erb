@@ -1,0 +1,196 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>Page Title</title> 
+	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.0a4.1.css" />
+	<link rel="stylesheet" href="myStyle.css" />
+	<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="jquerymobile/jquery.mobile-1.0a4.1.min.js"></script>
+</head> 
+<body> 
+
+<input type="hidden" name="location" />
+<input type="hidden" name="order" />
+
+  <!-- Start of first page -->
+  <div data-role="page" id="home">
+
+  	<div data-role="header">
+  		<h1>Beach Butlerz - Home</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  	  <div class="logo center-wrapper"></div>
+  	  
+  	  <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+  			<li data-role="list-divider">Beach Butlerz</li> 
+  			<li><a href="#about">About Us</a></li> 
+  			<li><a href="#location">Make an Order</a></li> 
+  		</ul>
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  <!-- Start of second page -->
+  <div data-role="page" id="about">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>About Us</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<p>We are Beach Butlerz!.</p>		
+  		<p><a href="#home">Back to Home</a></p>	
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  
+  	
+  <div data-role="page" id="location">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>Select a Location</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<p>Which beach will you be visiting?</p>		
+
+
+        <!-- document - choice made to put all locations in db instead of hardocded so can be easily changed and 
+        te restrucitons too. 
+        Some of the restricitons iwll be hard coed because of their variety. 
+        -->
+
+        <% @locations.each do |location| %>
+          <a href="#items<%=location.name.delete(' ') %>" data-id="<%= location.id %>" data-role="button" data-icon="arrow-r" data-theme="b"
+            class="orderLocation ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b">
+            <span class="ui-btn-inner ui-btn-corner-all">
+              <span class="ui-btn-text"><%= location.name %></span>
+              <span class="ui-icon ui-icon-arrow-r ui-icon-shadow"></span>
+            </span>
+          </a>
+        <% end %>
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  
+  
+  
+  
+  
+<% @locations.each do |location| %>  
+  <div data-role="page" id="items<%=location.name.delete(' ') %>" class="items">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>Your purchase</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<p>Which items would you like to order to <%=location.name %>?</p>		
+      <% LocationItem.where(:location_id => location.id).each do |locationToItem| %>
+        <% item = Item.where(:id => locationToItem.item_id).first %>
+        
+        
+    		<div class="ui-body ui-body-e"> 
+    			<h1><%=item.name %></h1> 
+    			<img src="<%=item.img %>" />
+    			<div data-role="collapsible" data-collapsed="true" data-theme="b"> 
+    				<h3>Description</h3> 
+    				<p><%=item.desc %></p> 
+    			</div><!-- /collapsible --> 
+    			
+    			<a href="#" class="addToCart" data-theme="e" data-itemid="<%=item.id%>" data-icon="plus" data-role="button">Add to Cart</a>
+    		</div><!-- /themed container -->
+        		
+      <% end %>
+      
+      <div class="ui-body ui-body-e"> 
+        <h1>Shopping Cart</h1>
+  		</div><!-- /themed container -->
+      
+      <a href="#checkout" id="toCheckout" data-theme="b" data-icon="arrow-r" data-role="button">Proceed to Checkout</a>
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+<% end %>  
+  
+  
+  
+  
+  
+  
+  
+  
+  <!-- Start of second page -->
+  <div data-role="page" id="checkout">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>Checkout</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<p>Please provide your phone number</p>		
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  
+  
+  
+  
+  
+  
+
+</body>
+</html>

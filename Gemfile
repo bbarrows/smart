@@ -1,0 +1,5 @@
+source "http://rubygems.org"
+gem "ruby-mysql"
+gem "sinatra"
+gem "sinatra-activerecord"
+gem "activerecord"
