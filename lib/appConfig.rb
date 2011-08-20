@@ -20,7 +20,7 @@ PASSWORD = 'admin'
 AUTHORIZE_LOGIN = '578kSdJ7k'
 AUTHORIZE_KEY = '2TvdkT56T662mF8h'
 
-#GATEWAY = :sandbox
+GATEWAY = :sandbox
 #GATEWAY = :production
 #REMEBER TO SET TO IN APP sandbox or production!!!!!!
 
