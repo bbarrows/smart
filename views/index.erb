@@ -72,7 +72,7 @@
   <% Item.all.each do |item| %>
     <a href="#" class="add_to_cart"  data-role="button" data-icon="plus" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>"><%=item.name %> - $<%=item.price %></a>
     <fieldset class="ui-grid-a">
-    <div class="ui-body ui-block-a"><p><%=item.desc %></p> </div>
+    <div class="ui-body ui-body-a"><p><%=item.desc %></p> </div>
     </fieldset>
 			<!--div data-role="collapsible" data-collapsed="true" data-theme="e"> 
 				<h3><%=item.name %> - $<%=item.price %></h3> 
