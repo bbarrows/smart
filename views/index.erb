@@ -70,9 +70,9 @@
 	<div data-role="content">	
 		<h3>Which items would you like to order?</h3>		
   <% Item.all.each do |item| %>
-    <a href="#" data-role="button" data-icon="delete" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>"><%=item.name %> - $<%=item.price %></a>
+    <a href="#" class="add_to_cart"  data-role="button" data-icon="plus" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>"><%=item.name %> - $<%=item.price %></a>
     <fieldset class="ui-grid-a">
-    <div class="ui-block-a"><p><%=item.desc %></p> </div>
+    <div class="ui-body ui-block-a"><p><%=item.desc %></p> </div>
     </fieldset>
 			<!--div data-role="collapsible" data-collapsed="true" data-theme="e"> 
 				<h3><%=item.name %> - $<%=item.price %></h3> 
