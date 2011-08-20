@@ -130,7 +130,7 @@ post '/purchase' do
   
   return "Invalid total. Please start purchase over from the beginning." if total.to_i <= 0
   
-  transaction = AuthorizeNet::AIM::Transaction.new(AUTHORIZE_LOGIN, AUTHORIZE_KEY, :gateway => :production)
+  transaction = AuthorizeNet::AIM::Transaction.new(AUTHORIZE_LOGIN, AUTHORIZE_KEY, :gateway => GATEWAY:production)
   #transaction = AuthorizeNet::AIM::Transaction.new(AUTHORIZE_LOGIN, AUTHORIZE_KEY, :gateway => :sandbox)
   credit_card = AuthorizeNet::CreditCard.new(ccnum, exp)
   response = transaction.purchase(total, credit_card)
