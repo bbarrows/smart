@@ -70,7 +70,7 @@
 	<div data-role="content">	
 		<h3>Which items would you like to order?</h3>		
   <% Item.all.each do |item| %>
-    <button class="add_to_cart" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>"><%=item.name %> - $<%=item.price %></button>
+    <a href="#" data-role="button" data-icon="delete" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>"><%=item.name %> - $<%=item.price %></button>
     <div class="ui-block-a"><p><%=item.desc %></p> </div>
 			<!--div data-role="collapsible" data-collapsed="true" data-theme="e"> 
 				<h3><%=item.name %> - $<%=item.price %></h3> 
