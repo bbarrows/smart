@@ -70,16 +70,17 @@
 	<div data-role="content">	
 		<h3>Which items would you like to order?</h3>		
   <% Item.all.each do |item| %>
-    
-			<div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+    <button class="add_to_cart" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>"><%=item.name %> - $<%=item.price %></button>
+    <div class="ui-block-a"><p><%=item.desc %></p> </div>
+			<!--div data-role="collapsible" data-collapsed="true" data-theme="e"> 
 				<h3><%=item.name %> - $<%=item.price %></h3> 
 				<div class="ui-body ui-body-e"> 
   			<img src="<%=item.img %>" />
         <p><%=item.desc %></p> 
 
   			<a href="#" class="add_to_cart" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>" data-icon="plus" data-role="button">Add to Cart</a>
-  		</div><!-- /themed container -->
-			</div><!-- /collapsible -->
+  		</div>
+			</div-->
   <% end %>
   
   <div class="ui-body ui-body-e"> 
