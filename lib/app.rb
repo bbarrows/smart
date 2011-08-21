@@ -98,7 +98,7 @@ get '/orders' do
 end
 
 get '/' do
-  @footer = "Beer without the lines"
+  @footer = "Beer fast pass"
   @failure = FAILURE_MESSAGE
   cache(erb(:index))
 end
