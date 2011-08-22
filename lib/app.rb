@@ -77,10 +77,12 @@ post '/updateOrderStatus' do
 end
 
 get '/orders' do
+  redirect to('/orders/' + COMPLETE)
+end
+
+get '/orders/:status' do |status|
   protected!
 
-  status = params[:status]
-  
   if (!status || (status != INCOMPLETE && status != COMPLETE))
     status = INCOMPLETE 
   end

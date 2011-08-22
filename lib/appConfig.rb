@@ -1,4 +1,4 @@
-BASE_URL = "http://www.bbarrows.com"
+BASE_URL = "http://127.0.0.1"#"http://www.bbarrows.com"
 
 SUCCESS_MESSAGE = "Purchase Successfull" 
 FAILURE_MESSAGE = "Failed"
