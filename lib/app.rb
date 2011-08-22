@@ -77,7 +77,7 @@ post '/updateOrderStatus' do
 end
 
 get '/orders' do
-  redirect to('/orders/' + COMPLETE)
+  redirect to('/orders/' + INCOMPLETE)
 end
 
 get '/orders/:status' do |status|
