@@ -8,7 +8,6 @@ class CreateOrder < ActiveRecord::Migration
       t.string  :code
       t.integer :user_id_fullfilled
       t.string  :email
-      t.string  :phone
       t.string  :name
       t.string  :last_four
       

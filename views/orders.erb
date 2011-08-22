@@ -65,8 +65,7 @@
         	</div-->
         	<div class="ui-block-a"><strong>Last four CC#s:</strong></div><div class="ui-block-b"><%=o.last_four%></div>
         	<div class="ui-block-a"><strong>Code:</strong></div><div class="ui-block-b"><%=o.code%></div>
-        	<div class="ui-block-a"><strong>Email:</strong></div><div class="ui-block-b"><%=o.email%></div>
-        	<div class="ui-block-a"><strong>Phone:</strong></div><div class="ui-block-b"><%=o.phone%></div>
+        	<div class="ui-block-a"><strong>Email:</strong></div><div class="ui-block-b"><%=o.email%></div>]
         	<div class="ui-block-a"><strong>Order Status:</strong></div>
         	  <div class="ui-block-b">
         	    <select name="select-choice-1" id="select-choice-1" data-orderId="<%= o.id %>" class="statusSelect">
@@ -98,10 +97,11 @@
   });
   
     $(".statusSelect").live('change', function () {
-      
+      var self = this;
       $.post("/updateOrderStatus", {status: $(this).val(), orderId: $(this).attr('data-orderId')}, 
       function (data) 
       {
+        $(self).hide();
         //window.location.reload();
       });
       

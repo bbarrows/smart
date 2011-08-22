@@ -111,7 +111,6 @@ post '/purchase' do
   last_four = ccnum[-4,4]
   exp = params[:month] + params[:year] #'1120'
   #total = params[:total] Calculate this myself to prevent someone from posting their own value
-  phone = params[:phone]
   email = params[:email]
   @name = params[:name]
   order_json = params[:order_json]
@@ -145,7 +144,6 @@ post '/purchase' do
       o.status = INCOMPLETE
       o.code = @purchaseCode
       o.email = email
-      o.phone = phone
       o.name = @name
       o.last_four = last_four
       #o.user_id_fullfilled
