@@ -43,11 +43,13 @@
 
   	<div data-role="header">
   	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
-  		<h1>About Us</h1>
+  		<h1>How it works</h1>
   	</div><!-- /header -->
 
   	<div data-role="content">	
-  		<p>Welcome to SmartBar!</p>		
+  		<p>Purchase your desired beverages</p>
+      <p>Bring the confirmation code we provide you with and your ID to Smart Bar, look for our banner next to the beer tents</p>
+      <p>Pickup your drink, and enjoy the show while feeling phenomenal!</p>
   		<p><a href="#home">Back to Home</a></p>	
   	</div><!-- /content -->
 
@@ -113,6 +115,7 @@
   	  <div id="notice"></div>
 
       <div data-role="fieldcontain">
+        <p>You will need to show your ID at pickup. The name on the ID must match the credit card.</p>
         <form id="orderForm">
           <label for="name">Credit Card Number:</label>
           <input type="text" name="ccnum" id="ccnum" value=""  />
@@ -217,6 +220,12 @@
     }
     
     $('.add_to_cart').live('click', function () {
+      var text_obj = $('.ui-btn-text', $(this));
+      var old_text = text_obj.text();
+      text_obj.text("Added!");
+      setTimeout(function () {
+        text_obj.text(old_text);
+      }, 500);
       var curBeer = $(this).attr('data-itemID');
       if (toBuy[curBeer])
       { 
