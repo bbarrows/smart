@@ -93,10 +93,6 @@
   </div><!-- /page -->
   
   <script type="text/javascript">
-  $(".statusSelect").live('click', function () {
-    alert("S");
-  });
-  
     $(".statusSelect").live('change', function () {
       var self = this;
       $.post("/updateOrderStatus", {status: $(this).val(), orderId: $(this).attr('data-orderId')}, 
