@@ -51,13 +51,11 @@
         	<div class="ui-block-a"><strong>Name:</strong></div><div class="ui-block-b"><%=o.name%></div>
         	<div class="ui-block-a"><strong>Order:</strong></div><div class="ui-block-b">
         	  <% 
-        	if orderItems
                   orderItems.each do |i|
         	    %>
         	    <p><%=i[1]%> * <%=@items[i[0]].name %></p>
         	    <%
         	  end
-                end
         	  %>
         	</div>
         	<div class="ui-block-a"><strong>Order Notes:</strong></div>
