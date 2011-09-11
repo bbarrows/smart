@@ -70,7 +70,7 @@
 	</div><!-- /header -->
 
 	<div data-role="content">	
-		<h3>Which items would you like to order?</h3>		
+		<h3>Which items would you like to order? Scroll down to checkout.</h3>		
   <% Item.all.each do |item| %>
     <a href="#" class="add_to_cart margintop"  data-role="button" data-icon="plus" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>"><%=item.name %> - $<%=item.price %></a>
     <!-- fieldset class="ui-grid-a">
