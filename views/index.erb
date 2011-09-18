@@ -224,7 +224,9 @@
       var old_text = text_obj.text();
       text_obj.text("Added!");
       setTimeout(function () {
-        text_obj.text(old_text);
+        if (old_test != "Added!") {
+          text_obj.text(old_text);
+        }
       }, 500);
       var curBeer = $(this).attr('data-itemID');
       if (toBuy[curBeer])
