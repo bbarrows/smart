@@ -17,11 +17,11 @@ USER_NAME = 'admin'
 PASSWORD = 'admin'
 
 
-AUTHORIZE_LOGIN = '578kSdJ7k'
-AUTHORIZE_KEY = '2TvdkT56T662mF8h'
+AUTHORIZE_LOGIN = 'madonna05' #'578kSdJ7k'
+AUTHORIZE_KEY = 'JuwAwFtBxUdvCriW' #'2TvdkT56T662mF8h'
 
-GATEWAY = :sandbox
-#GATEWAY = :production
+#GATEWAY = :sandbox
+GATEWAY = :production
 #REMEBER TO SET TO IN APP sandbox or production!!!!!!
 
 #For Testing
