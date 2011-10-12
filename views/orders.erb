@@ -1,7 +1,8 @@
 <!DOCTYPE html> 
 <html> 
 	<head> 
-	<title>Beach Butlerz</title> 
+	<meta http-equiv="refresh" content="2" >
+        <title>Beach Butlerz</title> 
 	<link rel="stylesheet" href="/jquerymobile/jquery.mobile-1.0a4.1.css" />
 	<link rel="stylesheet" href="/myStyle.css" />
 	<script src="/json2.js"></script>
@@ -51,7 +52,7 @@
         	<div class="ui-block-a"><strong>Name:</strong></div><div class="ui-block-b"><%=o.name%></div>
         	<div class="ui-block-a"><strong>Order:</strong></div><div class="ui-block-b">
         	  <% 
-        	  orderItems.each do |i|
+                  orderItems.each do |i|
         	    %>
         	    <p><%=i[1]%> * <%=@items[i[0]].name %></p>
         	    <%
@@ -92,10 +93,6 @@
   </div><!-- /page -->
   
   <script type="text/javascript">
-  $(".statusSelect").live('click', function () {
-    alert("S");
-  });
-  
     $(".statusSelect").live('change', function () {
       var self = this;
       $.post("/updateOrderStatus", {status: $(this).val(), orderId: $(this).attr('data-orderId')}, 
