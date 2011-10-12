@@ -169,7 +169,7 @@ post '/purchase' do
     
     @purchaseCode#SUCCESS_MESSAGE #" (authorization code: #{response.authorization_code})"
   else
-    FAILURE_MESSAGE + " to make purchase. #{response.response_reason_text}"
+    FAILURE_MESSAGE + " to make purchase. #{response.response_reason_text} <!-- #{response.authorization_code} --> "
   end
   
 end
