@@ -136,7 +136,7 @@ post '/purchase' do
   credit_card = AuthorizeNet::CreditCard.new(ccnum, exp)
   response = transaction.purchase(total, credit_card)
 
-  if response.success?
+  if response.success? || response.response_reason_code == "253"
     @purchaseCode = random_pronouncable_password.to_s
     
     @order = Order.new do |o|
