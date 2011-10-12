@@ -18,7 +18,7 @@ PASSWORD = 'admin'
 
 
 AUTHORIZE_LOGIN = 'madonna05' #'578kSdJ7k'
-AUTHORIZE_KEY = 'JuwAwFtBxUdvCriW' #'2TvdkT56T662mF8h'
+AUTHORIZE_KEY = 'JuwAwFtBxUdvCri'#W' #'2TvdkT56T662mF8h'
 
 #GATEWAY = :sandbox
 GATEWAY = :production
