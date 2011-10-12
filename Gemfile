@@ -1,6 +1,6 @@
 source "http://rubygems.org"
-#gem "pony"
-gem "mail"
+gem "pony"
+#gem "mail"
 gem "ruby-mysql"
 gem "sinatra"
 gem "sinatra-activerecord"
