@@ -1,4 +1,4 @@
-BASE_URL = "http://www.bbarrows.com"
+BASE_URL = "http://www.bbarrows.com/madonna"
 
 SUCCESS_MESSAGE = "Purchase Successfull" 
 FAILURE_MESSAGE = "Failed"
