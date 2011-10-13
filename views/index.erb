@@ -183,7 +183,7 @@
     
     var itemPrice = {};
     <% Item.all.each do |item| %>
-    itemPrice[<%=item.id %>]="<%=item.price %>";
+    itemPrice[<%=item.id %>]=new Number("<%=item.price %>").toFixed(2);
     <% end %>
     
     var toBuy = {};
