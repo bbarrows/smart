@@ -72,7 +72,7 @@
 	<div data-role="content">	
 		<h3>Which items would you like to order? Scroll down to checkout.</h3>		
   <% Item.all.each do |item| %>
-    <a href="#" class="add_to_cart margintop"  data-role="button" data-icon="plus" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>"><%=item.name %> - $<%=item.price %></a>
+    <a href="#" class="add_to_cart margintop"  data-role="button" data-icon="plus" data-itemID="<%=item.id %>" data-theme="b"><%=item.name %> - $<%=item.price %></a>
     <!-- fieldset class="ui-grid-a">
     <div class="ui-body ui-body-a"><p><%=item.desc %></p> </div>
     </fieldset-->
@@ -82,7 +82,7 @@
   			<img src="<%=item.img %>" />
         <p><%=item.desc %></p> 
 
-  			<a href="#" class="add_to_cart" data-itemID="<%=item.id %>" data-theme="b" data-itemid="<%=item.id%>" data-icon="plus" data-role="button">Add to Cart</a>
+  			<a href="#" class="add_to_cart" data-itemID="<%=item.id %>" data-theme="b" itemID data-icon="plus" data-role="button">Add to Cart</a>
   		</div>
 			</div-->
   <% end %>
@@ -202,7 +202,7 @@
       {
         if(toBuy[k] && toBuy[k] > 0)
         {                    
-          htmlStr += '<a href="#" class="minus_item ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow  ui-btn-down-b ui-btn-up-b" data-itemid="' + k + '" data-theme="b" data-icon="minus" data-role="button"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">'  + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k] + '</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>';
+          htmlStr += '<a href="#" class="minus_item ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow  ui-btn-down-b ui-btn-up-b" data-itemID="' + k + '" data-theme="b" data-icon="minus" data-role="button"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">'  + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k] + '</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>';
           
           checkoutHtml += "<li>" + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k]  + "</li>";
           
