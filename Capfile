@@ -8,7 +8,7 @@ set :user, "bbarrows"
 set :scm, :git
 set :repository,  "git@github.com:bbarrows/smart.git"
 set :deploy_via, :remote_cache
-set :deploy_to, "/home/#{user}/www/#{application}"
+set :deploy_to, "/home/#{user}/#{application}"
 
 role :app, "bbarrows.com"
 role :web, "bbarrows.com"
