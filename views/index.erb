@@ -206,7 +206,7 @@
           
           checkoutHtml += "<li>" + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k]  + "</li>";
           
-          total += parseInt(itemPrice[k]) * parseInt(toBuy[k]);
+          total += (parseFloat(itemPrice[k]) * parseInt(toBuy[k])).toFixed(2);
         }
       }
       
