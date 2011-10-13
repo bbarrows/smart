@@ -187,14 +187,13 @@
     <% end %>
     
     var toBuy = {};
-    
-    var checkoutHtml = "";
 
     function updateCart()
     {
       $('#order_json').val(JSON.stringify(toBuy));
       $('#cart_items').html("");
       var htmlStr = "";      
+      var checkoutHtml = "";
       var total = 0;
       
       checkoutHtml += "<ul>";
