@@ -72,8 +72,7 @@
 	<div data-role="content">	
 		<h3>Which items would you like to order? Scroll down to checkout.</h3>	
   <% Decimal.context.precision = 2 %>	
-  <% Item.all.each do |item| %>
-    <a href="#" class="add_to_cart margintop"  data-role="button" data-icon="plus" data-itemID="<%=item.id %>" data-theme="b"><%=item.name %> - $<%=Decimal(item.price) %></a>
+    <a href="#" class="add_to_cart margintop"  data-role="button" data-icon="plus" data-itemID="<%=item.id %>" data-theme="b"><%=item.name %> - $<%= sprintf("%.2f", item.price) %></a>
     <!-- fieldset class="ui-grid-a">
     <div class="ui-body ui-body-a"><p><%=item.desc %></p> </div>
     </fieldset-->
