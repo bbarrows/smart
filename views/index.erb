@@ -133,6 +133,8 @@
           <input type="hidden" name="order_json" id="order_json" />
           <input type="hidden" id="total" name="total" />
           
+          <div id="checkoutList"></div>
+          
         </form>
       </div>
       <div id="doCheck"><a href="" data-theme="b" data-icon="check" data-role="button">Checkout</a></div>
@@ -185,6 +187,8 @@
     <% end %>
     
     var toBuy = {};
+    
+    var checkoutHtml = "";
 
     function updateCart()
     {
@@ -193,15 +197,23 @@
       var htmlStr = "";      
       var total = 0;
       
+      checkoutHtml += "<ul>";
+      
       for(k in itemNames)
       {
         if(toBuy[k] && toBuy[k] > 0)
         {                    
           htmlStr += '<a href="#" class="minus_item ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow  ui-btn-down-b ui-btn-up-b" data-itemid="' + k + '" data-theme="b" data-icon="minus" data-role="button"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">'  + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k] + '</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>';
           
+          checkoutHtml += "<li>" + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k]  + "</li>";
+          
           total += parseInt(itemPrice[k]) * parseInt(toBuy[k]);
         }
       }
+      
+      checkoutHtml += "</ul>";
+      checkoutHtml += "<h3>Total: $" + total + "</h3>";
+      $("#checkoutList").html(checkoutHtml);
       
       htmlStr += "<h3>Total: $" + total + "</h3>";
       $("#total").val(total);
@@ -218,6 +230,8 @@
       }
       
     }
+    
+    
     
     $('.add_to_cart').live('click', function () {
       var text_obj = $('.ui-btn-text', $(this));
