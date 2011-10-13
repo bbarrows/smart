@@ -3,7 +3,6 @@ BASE_URL = "http://www.bbarrows.com"
 SUCCESS_MESSAGE = "Purchase Successfull" 
 FAILURE_MESSAGE = "Failed"
 FROM_EMAIL = "bradleyb1537@gmail.com"
-FROM_EMAIL = "bradleyb1537@gmail.com"
 EMAIL_SUBJECT = "SmartBar Confirmation Email"
 ORDER_SUBJECT = "SmartBar New Reservation ID:"
 
