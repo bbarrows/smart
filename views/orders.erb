@@ -95,7 +95,7 @@
   <script type="text/javascript">
     $(".statusSelect").live('change', function () {
       var self = this;
-      $.post("/updateOrderStatus", {status: $(this).val(), orderId: $(this).attr('data-orderId')}, 
+      $.post("<%=BASE_URL%>/updateOrderStatus", {status: $(this).val(), orderId: $(this).attr('data-orderId')}, 
       function (data) 
       {
         $(self).hide();
