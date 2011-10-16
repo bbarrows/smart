@@ -18,13 +18,13 @@ PASSWORD = 'admin'
 # :number => '4222222222222', #Authorize.net test card, error-producing       
 #:number => '4007000000027', #Authorize.net test card, non-error-producing
 
-AUTHORIZE_LOGIN = 'madonna05'
-AUTHORIZE_KEY = 'JuwAwFtBxUdvCriW'
-GATEWAY = :production
+#AUTHORIZE_LOGIN = 'madonna05'
+#AUTHORIZE_KEY = 'JuwAwFtBxUdvCriW'
+#GATEWAY = :production
 
-#AUTHORIZE_LOGIN = '578kSdJ7k'
-#AUTHORIZE_KEY = '2TvdkT56T662mF8h'
-#GATEWAY = :sandbox
+AUTHORIZE_LOGIN = '578kSdJ7k'
+AUTHORIZE_KEY = '2TvdkT56T662mF8h'
+GATEWAY = :sandbox
 
 #REMEBER TO SET TO IN APP sandbox or production!!!!!!
 
