@@ -15,6 +15,9 @@ ASC = "asc"
 USER_NAME = 'admin'
 PASSWORD = 'admin'
 
+# :number => '4222222222222', #Authorize.net test card, error-producing       
+#:number => '4007000000027', #Authorize.net test card, non-error-producing
+
 #AUTHORIZE_LOGIN = 'madonna05'
 #AUTHORIZE_KEY = 'JuwAwFtBxUdvCriW'
 #GATEWAY = :production

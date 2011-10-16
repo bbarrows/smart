@@ -217,7 +217,7 @@
       $("#checkoutList").html(checkoutHtml);
       
       htmlStr += "<h3>Total: $" + total + "</h3>";
-      $("#total").val(total);
+      $("#total").val(total.toFixed(2));
       
       $('.cartItems', $.mobile.activePage).html(htmlStr);
       
