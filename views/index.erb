@@ -323,7 +323,7 @@
     
     function tryPurchase()
     {
-      $.post("/purchase", $("#orderForm").serialize(), 
+      $.post("<%=BASE_URL%>/purchase", $("#orderForm").serialize(), 
       function (data) 
       {
         if(data.indexOf("<%=@failure%>") == -1)
