@@ -148,10 +148,7 @@
   	</div><!-- /header -->
   	
   </div><!-- /page -->
-  
-  
-  
-  
+
   
   <!-- Start of second page -->
   <div data-role="page" id="verification">
@@ -172,8 +169,7 @@
   	</div><!-- /header -->
   	
   </div><!-- /page -->  
-  
-  
+
   <script type="text/javascript">
     $(".ui-btn").live('click', function () { $(this).removeClass('ui-btn-active'); })
     $('.checkoutButton').hide();
@@ -231,9 +227,7 @@
       }
       
     }
-    
-    
-    
+
     $('.add_to_cart').live('click', function () {
       var text_obj = $('.ui-btn-text', $(this));
       var old_text = text_obj.text();
@@ -323,6 +317,12 @@
     
     function tryPurchase()
     {
+      /*
+      if (!$('#order_json').val()) {
+        $.mobile.changePage("#order");
+      }
+      */
+      
       $.post("<%=BASE_URL%>/purchase", $("#orderForm").serialize(), 
       function (data) 
       {
