@@ -20,8 +20,13 @@ set :database, database_urls[settings.environment]
 
 
 namespace :db do
+  desc "keep alive db"
+  task :alive do
+    ActiveRecord::Base.verify_active_connections!
+  end
+  
   desc "Seed the db"
-  task :seed  do
+  task :seed do
     Item.destroy_all
     i1 = Item.create([{ :name => 'Mimosa' , 
     :img => 'awesome.png', 

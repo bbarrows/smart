@@ -1,7 +1,7 @@
 class CreateOrder < ActiveRecord::Migration
   def self.up
     create_table :orders do |t|
-      t.integer :total
+      t.decimal :total, :precision => 6, :scale => 2
       t.string  :order_json
       t.string  :note
       t.string  :status

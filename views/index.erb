@@ -2,6 +2,8 @@
 <html> 
 	<head> 
 	<title>SmartBar</title> 
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
 	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.0a4.1.css" />
 	<link rel="stylesheet" href="myStyle.css" />
 	<script src="json2.js"></script>
@@ -146,10 +148,7 @@
   	</div><!-- /header -->
   	
   </div><!-- /page -->
-  
-  
-  
-  
+
   
   <!-- Start of second page -->
   <div data-role="page" id="verification">
@@ -170,8 +169,7 @@
   	</div><!-- /header -->
   	
   </div><!-- /page -->  
-  
-  
+
   <script type="text/javascript">
     $(".ui-btn").live('click', function () { $(this).removeClass('ui-btn-active'); })
     $('.checkoutButton').hide();
@@ -215,7 +213,7 @@
       $("#checkoutList").html(checkoutHtml);
       
       htmlStr += "<h3>Total: $" + total + "</h3>";
-      $("#total").val(total);
+      $("#total").val(total.toFixed(2));
       
       $('.cartItems', $.mobile.activePage).html(htmlStr);
       
@@ -229,9 +227,7 @@
       }
       
     }
-    
-    
-    
+
     $('.add_to_cart').live('click', function () {
       var text_obj = $('.ui-btn-text', $(this));
       var old_text = text_obj.text();
@@ -321,7 +317,13 @@
     
     function tryPurchase()
     {
-      $.post("/purchase", $("#orderForm").serialize(), 
+      /*
+      if (!$('#order_json').val()) {
+        $.mobile.changePage("#order");
+      }
+      */
+      
+      $.post("<%=BASE_URL%>/purchase", $("#orderForm").serialize(), 
       function (data) 
       {
         if(data.indexOf("<%=@failure%>") == -1)

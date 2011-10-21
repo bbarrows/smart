@@ -92,7 +92,7 @@ get '/orders/:status' do |status|
     order = DESC
   end
   
-  @orders = Order.where("status = ?", status).order("created_at").limit(2).offset(0)
+  @orders = Order.where("status = ?", status).order("created_at")
   
   @items = create_items_hash
   
