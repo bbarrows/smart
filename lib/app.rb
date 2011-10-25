@@ -13,7 +13,9 @@ require File.expand_path('../appConfig.rb', __FILE__)
 require File.expand_path('../models/item', __FILE__)
 require File.expand_path('../models/order', __FILE__)
 
-@test = 0
+before do
+  ActiveRecord::Base.verify_active_connections!
+end
 
 def create_items_hash()
   items = {}
