@@ -116,7 +116,7 @@ post '/purchase' do
   exp = params[:month] + params[:year] #'1120'
   #total = params[:total] Calculate this myself to prevent someone from posting their own value
   email = params[:email]
-  @name = params[:name]
+  #@name = params[:name]
   order_json = params[:order_json]
   
   items_hash = create_items_hash
@@ -148,7 +148,7 @@ post '/purchase' do
       o.status = INCOMPLETE
       o.code = @purchaseCode
       o.email = email
-      o.name = @name
+      #o.name = @name
       o.last_four = last_four
       #o.user_id_fullfilled
     end

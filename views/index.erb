@@ -120,13 +120,30 @@
         <p>You will need to show your ID at pickup. The name on the ID must match the credit card.</p>
         <form id="orderForm">
           <label for="name">Credit Card Number:</label>
-          <input type="text" name="ccnum" id="ccnum" value=""  />
+          <input type="text" name="ccnum1" id="ccnum1" value=""  />
+          <input type="text" name="ccnum2" id="ccnum2" value=""  />
+          <input type="text" name="ccnum3" id="ccnum3" value=""  />
+          <input type="text" name="ccnum4" id="ccnum4" value=""  />
+          <input type="hidden" name="ccnum" id="ccnum" value=""  />
           
           <label for="name">Expiration MM/YY:</label>
-          <input type="text" name="month" maxlength="2" id="month" value=""  />/<input type="text" maxlength="2" name="year" id="year" value=""  /> <div id="expFiller"></div>
+
+          <select name="month" id="month">
+              <% for i in 1..12: %>
+                <option value="<%= i %>"><%= i %></option>
+              <% end %>
+          </select>
           
-          <label for="name">Name:</label>
-          <input type="text" name="name" id="name" value=""  />
+          <select name="year" id="year">
+              <% for i in 11..22: %>
+              <% val = "%02d" % i %>
+                <option value="<%= val %>"><%= val %></option>
+              <% end %>
+          </select>
+          <input type="text" name="month" maxlength="2" id="month" value=""  />/<input type="text" maxlength="2" name="year" id="year" value=""  --> <div id="expFiller"></div>
+          
+          <!--label for="name">Name:</label>
+          <input type="text" name="name" id="name" value=""  /-->
           
           <label for="name">Email:</label>
           <input type="text" name="email" id="email" value=""  />
@@ -267,7 +284,10 @@
       
       var month = $('#month').val();
       var year = $('#year').val();
-      var ccnum = $('#ccnum').val();
+      var ccnum1 = $('#ccnum').val();
+      var ccnum2 = $('#ccnum').val();
+      var ccnum3 = $('#ccnum').val();
+      var ccnum4 = $('#ccnum').val();
       var email = $('#email').val();
       var name = $('#name').val();
 
@@ -287,10 +307,15 @@
         success = false;
       }
 
+      var ccnum = ccnum1 + ccnum2 + ccnum3 + ccnum4;
       if(ccnum - 0 != ccnum && ccnum.length >= 10)
       {
         newHtml += "<li>Your credit card number should only contain digits.</li>";
         success = false;
+      }
+      else 
+      {
+        $('#ccnum').val(ccnum);
       }
       
       if(!email || email=="")
