@@ -1,0 +1,174 @@
+/* Links */
+header a:link, header a:visited {
+   font-size: 1.2em;
+}
+
+header a:link, header a:visited, 
+footer a:link, footer a:visited, 
+footer span,
+#logo p,
+.dark-foreground h2 {
+   font-family: "Helvetica" "Arial" sans-serif;
+   color: #f3f3f3;
+}
+
+h2 { text-shadow: 0 1px 1px #fff; }
+
+/* Class definitions */
+
+.dark-foreground {
+   position: relative;
+   background: #383838;
+   padding: 0 8px;
+   margin: 0 auto;
+}
+
+.dark-foreground.both-border { 
+   border-top: 1px solid #ddd; 
+   border-bottom: 1px solid #ddd; 
+   box-shadow: 0 0 24px rgba(0,0,0,.25);
+}
+
+.dark-foreground.bottom-border { 
+   border-bottom: 1px solid #ddd; 
+   box-shadow: 0px 8px 24px rgba(0,0,0,.25);
+}
+
+.dark-foreground.top-border { 
+   border-top: 1px solid #ddd; 
+   box-shadow: 0px -8px 24px rgba(0,0,0,.25);
+}
+
+.dark-foreground h2 {
+   color: #e8e8e8;
+   text-shadow: 0 -1px 1px #282828;
+}
+
+/* Main definitions */
+
+#page, #info, #contact {
+   margin: 0 auto;
+   background-color: #e2e2e2;
+}
+
+#page {
+   border-top: 1px solid #d2d2d2;
+   border-bottom: 1px solid #d2d2d2;
+}
+
+#contact { border-bottom: 1px solid #d2d2d2; }
+
+
+#logo img {
+   max-width: 200px;
+}
+
+#logo p {
+   margin: -2px 0 0 2px; 
+   font-size: 1.1em;
+}
+
+header, footer {
+   margin-bottom: 0;
+   margin-top: 0;
+   padding-top: 0;
+   padding-bottom: 0;
+}
+
+header #headerWrap, footer #footerWrap { padding: 8px 0; }
+
+header nav {
+   margin-top: 54px;
+   margin-bottom: 0;
+   padding-bottom: 0;
+}
+
+footer nav a,
+footer nav a.link,
+footer nav span,
+header nav a,
+header nav a.link {
+   display: inline; 
+   margin: 0 12px;  
+   padding-bottom: 0;
+   float: right;
+   text-shadow: 1px 0 1px #535353;
+   text-align: center;
+}
+
+footer nav a,
+footer nav a.link,
+footer nav span { margin: 0 4px; }
+
+footer nav a.link:hover { text-decoration: underline; }
+header nav a.link:hover {
+   text-decoration: none;
+   text-shadow: none;
+   /* Negative margin = padding-bottom + border size.  Used to get rid of jumpyness */
+   margin-bottom: -8px;
+   padding-bottom: 4px;
+   border-bottom: 4px solid #f36e28;
+}
+
+#main { padding: 24px 0; }
+#mainImage { margin-top: 12px; }
+
+#introduction { margin-top: 32px; }
+#introduction h1 { text-shadow: 0 1px 1px #fff; margin-bottom: 2px; }
+#introduction h3.subhead { color: #303030; margin:0 0 8px 0; }
+#introduction p.headerText {
+   font-size: 1.6em;
+   line-height: 1.51em;
+   color: #343434;
+   text-shadow: 0 1px 1px #fff;
+}
+
+#video {
+   margin: 0 auto:  
+   width: 500px;
+   padding: 32px;
+}
+
+#video .main-video {
+   border: 1px solid #999;
+   box-shadow: 0 0 4px rgba(0,0,0,1.0);
+   -moz-box-shadow: 0 0 4px rgba(0,0,0,1.0);
+   -webkit-box-shadow: 0 0 4px rgba(0,0,0,1.0);
+}
+
+#info .infobox {
+   margin: 0 auto;
+   padding: 36px 0;
+}
+
+#info .info-text h2 {
+   font-size: 2.4em;
+   margin-bottom: 6px;
+}
+
+#info .info-text h3 {
+   font-size: 1.7em;
+   color: #303030;
+   margin-top: -8px;
+   padding-top: 0;
+   margin-bottom: 4px;
+}
+
+#info .info-text p {
+   font-size: 1.2em;
+   line-height: 1.71em;
+}
+
+#info .icon.payment-icon { background: url('../images/payment_icon.png') no-repeat center bottom; }
+#info .icon.line-icon { background: url('../images/long_line_icon.png') no-repeat center bottom; } 
+#info .icon.drink-selection-icon { background: url('../images/drink_selection_icon.png') no-repeat center bottom; }
+
+#info .icon { width: 160px; height: 160px; margin-top: 12px; }
+#info .icon.payment-icon:hover { background-position: center top; margin-top: 14px; cursor: pointer; } 
+#info .icon.line-icon:hover { background-position: center top; margin-top: 15px; cursor: pointer; } 
+#info .icon.drink-selection-icon:hover { background-position: center top; margin-top: 15px; cursor: pointer; } 
+
+#contactWrap { text-align: center; padding-bottom: 24px; } 
+#contactWrap h2 { margin-bottom: 24px; }
+
+

@@ -1,0 +1,369 @@
+<!DOCTYPE html> 
+<html> 
+	<head> 
+	<title>SmartBar</title> 
+	<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1.0; minimum-scale=1.0; user-scalable=0;" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+	<link rel="stylesheet" href="jquerymobile/jquery.mobile-1.0a4.1.css" />
+	<link rel="stylesheet" href="myStyle.css" />
+	<script src="json2.js"></script>
+	<script type="text/javascript" src="jquery-1.5.2.min.js"></script>
+	<script type="text/javascript" src="jquerymobile/jquery.mobile-1.0rc1.min.js"></script>
+</head> 
+<body>
+   
+
+  <!-- Start of first page -->
+  <div data-role="page" id="home">
+
+  	<div data-role="header">
+  		<h1>SmartBar - Home</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  	  <div class="logo center-wrapper"></div>
+  	  
+  	  <ul data-role="listview" data-inset="true" data-theme="c" data-dividertheme="b"> 
+  			<li data-role="list-divider">SmartBar</li> 
+  			<li><a href="#about">How it works</a></li> 
+  			<li><a href="#order">Make an Order</a></li> 
+  		</ul>
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+
+
+
+
+
+  <!-- Start of second page -->
+  <div data-role="page" id="about">
+
+  	<div data-role="header">
+  	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+  		<h1>How it works</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  		<p>Purchase your desired beverages</p>
+      <p>Bring the confirmation code we provide you with and your ID to Smart Bar, look for our banner next to the beer tents</p>
+      <p>Pickup your drink, and enjoy the show while feeling phenomenal!</p>
+  		<p><a href="#home">Back to Home</a></p>	
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  </div><!-- /page -->
+  
+  
+  
+  
+  
+<div data-role="page" id="order" class="items">
+
+	<div data-role="header">
+	          <a href="#" class="ui-btn-left ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow ui-btn-down-b ui-btn-up-b" data-rel="back" data-icon="arrow-l" data-theme="b"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">Back</span><span class="ui-icon ui-icon-arrow-l ui-icon-shadow"></span></span></a>
+		<h1>Make an Order</h1>
+	</div><!-- /header -->
+
+	<div data-role="content">	
+		<h3>Which items would you like to order? Scroll down to checkout.</h3>		
+  <% Item.all.each do |item| %>
+    <a href="#" class="add_to_cart margintop"  data-role="button" data-icon="plus" data-itemID="<%=item.id %>" data-theme="b"><%=item.name %> - $<%=sprintf("%.2f", item.price) %></a>
+    <!-- fieldset class="ui-grid-a">
+    <div class="ui-body ui-body-a"><p><%=item.desc %></p> </div>
+    </fieldset-->
+			<!--div data-role="collapsible" data-collapsed="true" data-theme="e"> 
+				<h3><%=item.name %> - $<%=item.price %></h3> 
+				<div class="ui-body ui-body-e"> 
+  			<img src="<%=item.img %>" />
+        <p><%=item.desc %></p> 
+
+  			<a href="#" class="add_to_cart" data-itemID="<%=item.id %>" data-theme="b" itemID data-icon="plus" data-role="button">Add to Cart</a>
+  		</div>
+			</div-->
+  <% end %>
+  
+  <div class="margintop ui-body ui-body-e"> 
+    <h1>Shopping Cart</h1>
+    <div class="cartItems"><h3>Total: $0</h3></div>
+		</div><!-- /themed container -->
+  
+  <div class="checkoutButton">
+  <a href="#checkout" data-theme="b" data-icon="arrow-r" data-role="button">Proceed to Checkout</a>
+  </div>
+	</div><!-- /content -->
+
+	<div data-role="footer">
+		<h4><%=@footer %></h4>
+	</div><!-- /header -->
+</div><!-- /page -->
+
+  
+  <!-- Start of second page -->
+  <div data-role="page" id="checkout">
+
+  	<div data-role="header">
+  		<h1>Checkout</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  	  
+  	  <div id="notice"></div>
+
+      <div data-role="fieldcontain">
+        <p>You will need to show your ID at pickup. The name on the ID must match the credit card.</p>
+        <form id="orderForm">
+          <label for="name">Credit Card Number:</label>
+          <input type="text" name="ccnum1" id="ccnum1" value=""  />
+          <input type="text" name="ccnum2" id="ccnum2" value=""  />
+          <input type="text" name="ccnum3" id="ccnum3" value=""  />
+          <input type="text" name="ccnum4" id="ccnum4" value=""  />
+          <input type="hidden" name="ccnum" id="ccnum" value=""  />
+          
+          <label for="name">Expiration MM/YY:</label>
+
+          <select name="month" id="month">
+              <% for i in 1..12: %>
+                <option value="<%= i %>"><%= i %></option>
+              <% end %>
+          </select>
+          
+          <select name="year" id="year">
+              <% for i in 11..22: %>
+              <% val = "%02d" % i %>
+                <option value="<%= val %>"><%= val %></option>
+              <% end %>
+          </select>
+          <input type="text" name="month" maxlength="2" id="month" value=""  />/<input type="text" maxlength="2" name="year" id="year" value=""  --> <div id="expFiller"></div>
+          
+          <!--label for="name">Name:</label>
+          <input type="text" name="name" id="name" value=""  /-->
+          
+          <label for="name">Email:</label>
+          <input type="text" name="email" id="email" value=""  />
+          
+          <input type="hidden" id="location" name="location" />
+          <input type="hidden" name="order_json" id="order_json" />
+          <input type="hidden" id="total" name="total" />
+          
+          <div id="checkoutList"></div>
+          
+        </form>
+      </div>
+      <div id="doCheck"><a href="" data-theme="b" data-icon="check" data-role="button">Checkout</a></div>
+
+  	</div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  	
+  </div><!-- /page -->
+
+  
+  <!-- Start of second page -->
+  <div data-role="page" id="verification">
+
+  	<div data-role="header" data-backbtn="false">
+  		<h1>Verification</h1>
+  	</div><!-- /header -->
+
+  	<div data-role="content">	
+  	  <p>
+  	    A confirmation email containing your purchase id has been sent to your address.
+  	  </p>
+  	  <p>Note that your Purchase ID is: <span id="purchaseCode"></span></p>
+    </div><!-- /content -->
+
+  	<div data-role="footer">
+  		<h4><%=@footer %></h4>
+  	</div><!-- /header -->
+  	
+  </div><!-- /page -->  
+
+  <script type="text/javascript">
+    $(".ui-btn").live('click', function () { $(this).removeClass('ui-btn-active'); })
+    $('.checkoutButton').hide();
+
+    var itemNames = {};
+    <% Item.all.each do |item| %>
+    itemNames[<%=item.id %>]="<%=item.name %>";
+    <% end %>
+    
+    var itemPrice = {};
+    <% Item.all.each do |item| %>
+    itemPrice[<%=item.id %>]=new Number("<%=item.price %>").toFixed(2);
+    <% end %>
+    
+    var toBuy = {};
+
+    function updateCart()
+    {
+      $('#order_json').val(JSON.stringify(toBuy));
+      $('#cart_items').html("");
+      var htmlStr = "";      
+      var checkoutHtml = "";
+      var total = 0;
+      
+      checkoutHtml += "<ul>";
+      
+      for(k in itemNames)
+      {
+        if(toBuy[k] && toBuy[k] > 0)
+        {                    
+          htmlStr += '<a href="#" class="minus_item ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow  ui-btn-down-b ui-btn-up-b" data-itemID="' + k + '" data-theme="b" data-icon="minus" data-role="button"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">'  + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k] + '</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>';
+          
+          checkoutHtml += "<li>" + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k]  + "</li>";
+          
+          total += parseFloat( (parseFloat(itemPrice[k]) * parseInt(toBuy[k])).toFixed(2) );
+        }
+      }
+      
+      checkoutHtml += "</ul>";
+      checkoutHtml += "<h3>Total: $" + total + "</h3>";
+      $("#checkoutList").html(checkoutHtml);
+      
+      htmlStr += "<h3>Total: $" + total + "</h3>";
+      $("#total").val(total.toFixed(2));
+      
+      $('.cartItems', $.mobile.activePage).html(htmlStr);
+      
+      if (total <= 0)
+      {
+        $('.checkoutButton').hide();
+      }
+      else
+      {
+        $('.checkoutButton').show();
+      }
+      
+    }
+
+    $('.add_to_cart').live('click', function () {
+      var text_obj = $('.ui-btn-text', $(this));
+      var old_text = text_obj.text();
+      text_obj.text("Added!");
+      setTimeout(function () {
+        if (old_text != "Added!") {
+          text_obj.text(old_text);
+        }
+      }, 500);
+      var curBeer = $(this).attr('data-itemID');
+      if (toBuy[curBeer])
+      { 
+        toBuy[curBeer]++; 
+      }
+      else
+      {
+        toBuy[curBeer]=1;
+      }
+      updateCart();
+    }); 
+
+    $('.minus_item').live('click', function () {
+      var curBeer = $(this).attr('data-itemID');
+      if (toBuy[curBeer] && toBuy[curBeer]>1)
+      { 
+        toBuy[curBeer]--; 
+      }
+      else
+      {
+        toBuy[curBeer]=0;
+      }
+      updateCart();
+    });
+
+    $('#doCheck').click(function () {
+      $('#ccnum').val( $('#ccnum').val().split(' ').join('').split('-').join('')  );
+      
+      var month = $('#month').val();
+      var year = $('#year').val();
+      var ccnum1 = $('#ccnum').val();
+      var ccnum2 = $('#ccnum').val();
+      var ccnum3 = $('#ccnum').val();
+      var ccnum4 = $('#ccnum').val();
+      var email = $('#email').val();
+      var name = $('#name').val();
+
+      var success = true;
+
+      var newHtml = "<ul>";
+
+      if(month.length != 2 || !(month >=0 && month <=12))
+      {
+        newHtml += "<li>Please enter a valid month.</li>";
+        success = false;
+      }
+
+      if(year.length != 2 || (year - 0 != year))
+      {
+        newHtml += "<li>Please enter a valid year.</li>";
+        success = false;
+      }
+
+      var ccnum = ccnum1 + ccnum2 + ccnum3 + ccnum4;
+      if(ccnum - 0 != ccnum && ccnum.length >= 10)
+      {
+        newHtml += "<li>Your credit card number should only contain digits.</li>";
+        success = false;
+      }
+      else 
+      {
+        $('#ccnum').val(ccnum);
+      }
+      
+      if(!email || email=="")
+      {
+        newHtml += "<li>Please enter an email.</li>";
+        success = false;
+      }
+      
+      if(!name || name=="")
+      {
+        newHtml += "<li>Please enter a name.</li>";
+        success = false;
+      }
+      
+      newHtml += "</ul>";
+      $("#notice").html(newHtml);
+
+      if(success)
+      {
+        tryPurchase();
+        $("#notice").html("<h3>Processing...</h3>");
+      }
+    });
+    
+    function tryPurchase()
+    {
+      /*
+      if (!$('#order_json').val()) {
+        $.mobile.changePage("#order");
+      }
+      */
+      
+      $.post("<%=BASE_URL%>/purchase", $("#orderForm").serialize(), 
+      function (data) 
+      {
+        if(data.indexOf("<%=@failure%>") == -1)
+        {
+          $("#purchaseCode").html(data);
+          $.mobile.changePage($("#verification"));
+        }
+        else
+        {
+          $("#notice").html("<h3>" + data + "</h3>");
+        }
+      });
+    }
+
+  </script>
+
+</body>
+</html>

@@ -102,6 +102,10 @@ get '/orders/:status' do |status|
 end
 
 get '/' do
+  cache(erb(:index))
+end
+
+get '/madonna' do
   @footer = "Beer fast pass"
   @failure = FAILURE_MESSAGE
   cache(erb(:index))
