@@ -105,10 +105,10 @@ get '/' do
   cache(erb(:index))
 end
 
-get '/madonna' do
+get '/app' do
   @footer = "Beer fast pass"
   @failure = FAILURE_MESSAGE
-  cache(erb(:index))
+  cache(erb(:sales))
 end
 
 
