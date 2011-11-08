@@ -102,7 +102,7 @@ get '/orders/:status' do |status|
 end
 
 get '/' do
-  cache(erb(:index))
+  erb :index
 end
 
 get '/app' do

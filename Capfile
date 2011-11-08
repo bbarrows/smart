@@ -21,6 +21,6 @@ after 'deploy:update', 'deploy:restart'
 
 namespace :deploy do
   task :restart, :roles => [:web, :app] do
-    run "cd #{deploy_to}/current/tmp && touch restart.txt && rm #{deploy_to}/current/public/index.html"
+    run "cd #{deploy_to}/current/tmp && touch restart.txt && rm #{deploy_to}/current/public/*.html"
   end
 end
