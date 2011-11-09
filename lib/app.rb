@@ -101,7 +101,7 @@ get '/orders/:status' do |status|
   erb :orders
 end
 
-get '/' do
+get '/app' do
   erb :app
 end
 
