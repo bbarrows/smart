@@ -1,4 +1,4 @@
-BASE_URL = "https://smartbarapp.com/madonna"
+BASE_URL = "https://smartbarapp.com"
 
 SUCCESS_MESSAGE = "Purchase Successfull" 
 FAILURE_MESSAGE = "Failed"
