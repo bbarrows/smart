@@ -128,18 +128,6 @@
           
           <label for="name">Expiration MM/YY:</label>
 
-          <select name="month" id="month">
-              <% for i in 1..12: %>
-                <option value="<%= i %>"><%= i %></option>
-              <% end %>
-          </select>
-          
-          <select name="year" id="year">
-              <% for i in 11..22: %>
-              <% val = "%02d" % i %>
-                <option value="<%= val %>"><%= val %></option>
-              <% end %>
-          </select>
           <input type="text" name="month" maxlength="2" id="month" value=""  />/<input type="text" maxlength="2" name="year" id="year" value=""  --> <div id="expFiller"></div>
           
           <!--label for="name">Name:</label>
