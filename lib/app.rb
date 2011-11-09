@@ -101,7 +101,7 @@ get '/orders/:status' do |status|
   erb :orders
 end
 
-get '/app' do
+get '/brad' do
   @footer = "Beer fast pass"
   @failure = FAILURE_MESSAGE
   #cache(erb(:app))
