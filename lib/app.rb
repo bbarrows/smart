@@ -102,7 +102,7 @@ get '/orders/:status' do |status|
 end
 
 get '/' do
-  erb :index
+  erb :sales
 end
 
 get '/app' do
