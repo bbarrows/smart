@@ -278,7 +278,6 @@
       var ccnum3 = $('#ccnum').val();
       var ccnum4 = $('#ccnum').val();
       var email = $('#email').val();
-      var name = $('#name').val();
 
       var success = true;
 
@@ -310,12 +309,6 @@
       if(!email || email=="")
       {
         newHtml += "<li>Please enter an email.</li>";
-        success = false;
-      }
-      
-      if(!name || name=="")
-      {
-        newHtml += "<li>Please enter a name.</li>";
         success = false;
       }
       
