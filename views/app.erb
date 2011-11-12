@@ -120,12 +120,13 @@
         <p>You will need to show your ID at pickup. The name on the ID must match the credit card.</p>
         <form id="orderForm">
           <label for="name">Credit Card Number:</label>
-          <input type="text" name="ccnum1" id="ccnum1" value=""  />
-          <input type="text" name="ccnum2" id="ccnum2" value=""  />
-          <input type="text" name="ccnum3" id="ccnum3" value=""  />
-          <input type="text" name="ccnum4" id="ccnum4" value=""  />
-          <input type="hidden" name="ccnum" id="ccnum" value=""  />
-          
+          <div id="cc_inputs">
+            <input type="text" name="ccnum1" id="ccnum1" value=""  />
+            <input type="text" name="ccnum2" id="ccnum2" value=""  />
+            <input type="text" name="ccnum3" id="ccnum3" value=""  />
+            <input type="text" name="ccnum4" id="ccnum4" value=""  />
+            <input type="hidden" name="ccnum" id="ccnum" value=""  />
+          </div>
           <label for="name">Expiration MM/YY:</label>
 
           <input type="text" name="month" maxlength="2" id="month" value=""  />/<input type="text" maxlength="2" name="year" id="year" value=""  --> <div id="expFiller"></div>

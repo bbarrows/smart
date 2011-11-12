@@ -38,3 +38,12 @@
 .margintop {
   margin-top: 20px;
 }
+
+#cc_inputs input {
+width: 20%;
+display: inline;
+}
+
+#exp_label {
+  display:block;
+}
