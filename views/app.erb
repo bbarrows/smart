@@ -121,11 +121,12 @@
         <form id="orderForm">
           <label for="name">Credit Card Number:</label>
           <div id="cc_inputs">
-            <input type="text" name="ccnum1" id="ccnum1" value=""  />
+            <!--input type="text" name="ccnum1" id="ccnum1" value=""  />
             <input type="text" name="ccnum2" id="ccnum2" value=""  />
             <input type="text" name="ccnum3" id="ccnum3" value=""  />
             <input type="text" name="ccnum4" id="ccnum4" value=""  />
-            <input type="hidden" name="ccnum" id="ccnum" value=""  />
+            <input type="hidden" name="ccnum" id="ccnum" value=""  /-->
+            <input type="text" name="ccnum" id="ccnum" value=""  />
           </div>
           <label id="exp_label" for="name">Expiration MM/YY:</label>
 
@@ -273,15 +274,17 @@
       
       var month = $('#month').val();
       var year = $('#year').val();
-      var ccnum1 = $('#ccnum1').val();
-      var ccnum2 = $('#ccnum2').val();
-      var ccnum3 = $('#ccnum3').val();
-      var ccnum4 = $('#ccnum4').val();
+      //var ccnum1 = $('#ccnum1').val();
+      //var ccnum2 = $('#ccnum2').val();
+      //var ccnum3 = $('#ccnum3').val();
+      //var ccnum4 = $('#ccnum4').val();
       var email = $('#email').val();
 
       var success = true;
 
       var newHtml = "<ul>";
+
+      var ccnum = $('#ccnum').val(); //ccnum1 + ccnum2 + ccnum3 + ccnum4;
 
       if(month.length != 2 || !(month >=0 && month <=12))
       {
@@ -295,7 +298,7 @@
         success = false;
       }
 
-      var ccnum = ccnum1 + ccnum2 + ccnum3 + ccnum4;
+      
       if(ccnum - 0 != ccnum && ccnum.length >= 10)
       {
         newHtml += "<li>Your credit card number should only contain digits.</li>";
