@@ -199,28 +199,29 @@
       $('#cart_items').html("");
       var htmlStr = "";      
       var checkoutHtml = "";
-      var total = 0;
+      var total = new Number(0);
       
       checkoutHtml += "<ul>";
       
       for(k in itemNames)
       {
-        if(toBuy[k] && toBuy[k] > 0)
+        var index = parseInt(k);
+        if(toBuy[index] && toBuy[index] > 0)
         {                    
-          htmlStr += '<a href="#" class="minus_item ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow  ui-btn-down-b ui-btn-up-b" data-itemID="' + k + '" data-theme="b" data-icon="minus" data-role="button"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">'  + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k] + '</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>';
+          htmlStr += '<a href="#" class="minus_item ui-btn ui-btn-icon-left ui-btn-corner-all ui-shadow  ui-btn-down-b ui-btn-up-b" data-itemID="' + index + '" data-theme="b" data-icon="minus" data-role="button"><span class="ui-btn-inner ui-btn-corner-all"><span class="ui-btn-text">'  + itemNames[index] + " - " + toBuy[index] + " * $" + itemPrice[index] + '</span><span class="ui-icon ui-icon-minus ui-icon-shadow"></span></span></a>';
           
-          checkoutHtml += "<li>" + itemNames[k] + " - " + toBuy[k] + " * $" + itemPrice[k]  + "</li>";
-          
-          total += parseFloat( (parseFloat(itemPrice[k]) * parseInt(toBuy[k])).toFixed(2) );
+          checkoutHtml += "<li>" + itemNames[index] + " - " + toBuy[index] + " * $" + itemPrice[index]  + "</li>";
+          total += new Number( new Number(itemPrice[index]) * new Number(toBuy[index]) );
         }
       }
+      total = total.toFixed(2);
       
       checkoutHtml += "</ul>";
       checkoutHtml += "<h3>Total: $" + total + "</h3>";
       $("#checkoutList").html(checkoutHtml);
       
       htmlStr += "<h3>Total: $" + total + "</h3>";
-      $("#total").val(total.toFixed(2));
+      $("#total").val(total);
       
       $('.cartItems', $.mobile.activePage).html(htmlStr);
       
