@@ -119,6 +119,7 @@ post '/purchase' do
   email = params[:email]
   #@name = params[:name]
   order_json = params[:order_json]
+  tip = params[:tip]
   
   items_hash = create_items_hash
   @order_text = ""
@@ -126,9 +127,14 @@ post '/purchase' do
   parsed_order = JSON.parse(order_json)
   
   parsed_order.each_pair do |k,v|
-    @order_text = @order_text + v.to_s + " * " + items_hash[k].name 
-    total = total + v * + items_hash[k].price 
+    @order_text += v.to_s + " * " + items_hash[k].name + " \n"
+    total += v * + items_hash[k].price 
   end
+  
+  #if tip and tip > 0 and tip <=10
+  #  total += tip
+  #  @order_text += "\n\nTip: " + tip + "\n"
+  #end
   
   @purchaseCode = ""
   
