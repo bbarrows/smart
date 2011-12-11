@@ -228,7 +228,8 @@
           total += new Number( new Number(itemPrice[index]) * new Number(toBuy[index]) );
         }
       }
-      total = total.toFixed(2);
+      total = total.toFixed(2) + "";
+      if(total.indexOf('.') == (total.length - 2)) { total += '0'; }
       
       checkoutHtml += "</ul>";
       checkoutHtml += "<h3>Total: $" + total + "</h3>";
